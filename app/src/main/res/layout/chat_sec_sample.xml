@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_margin="10dp">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_image"
+        android:layout_width="70dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="5dp"
+        android:foregroundGravity="center_vertical"
+        android:src="@drawable/ic_baseline_person_24"
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/personName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:singleLine="true"
+        android:text="Name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/user_image"
+        app:layout_constraintTop_toTopOf="@+id/user_image" />
+
+    <TextView
+        android:id="@+id/lastMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="Last message"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/user_image"
+        app:layout_constraintStart_toStartOf="@+id/personName"
+        app:layout_constraintTop_toBottomOf="@+id/personName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

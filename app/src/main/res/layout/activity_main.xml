@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <!--com.google.android.material.tabs.TabLayout
+        android:layout_height="70dp"
+        android:layout_width="match_parent"
+        android:background="@color/wpActionBar"
+        app:tabTextColor="@color/white"
+        app:tabSelectedTextColor="@color/white"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabMaxWidth="0dp"
+        >
+
+        <com.google.android.material.tabs.TabItem
+            android:text="tab1"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:text="tab2"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"/>
+
+    </com.google.android.material.tabs.TabLayout-->
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayOut"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/wpActionBar"
+        android:elevation="12dp"
+        app:tabIndicatorColor="@color/white"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/white"
+        app:tabMaxWidth="0dp"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.viewpager.widget.ViewPager>
+
+
+    <!--/androidx.viewpager.widget.ViewPager-->
+
+
+</LinearLayout>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/whatsapp"
+    tools:context=".ChattingActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/chattingtollBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/wpActionBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_image"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:foregroundGravity="center_vertical"
+                android:src="@drawable/ic_baseline_person_24"
+                app:civ_border_color="@color/wpActionBar"
+                app:civ_border_width="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:singleLine="true"
+                android:text="@string/name"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/user_image"
+                app:layout_constraintStart_toEndOf="@+id/user_image"
+                app:layout_constraintTop_toTopOf="@+id/user_image"
+                android:layout_marginStart="15dp" />
+
+            <ImageView
+                android:id="@+id/phone"
+                android:layout_width="38dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:foregroundGravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/user_name"
+                app:layout_constraintEnd_toStartOf="@+id/webcam"
+                app:layout_constraintTop_toTopOf="@+id/user_name"
+                app:srcCompat="@drawable/ic_baseline_phone_24"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageView
+                android:id="@+id/webcam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/phone"
+                app:layout_constraintEnd_toStartOf="@+id/menueBar"
+                app:layout_constraintTop_toTopOf="@+id/phone"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_baseline_videocam_24"
+                tools:ignore="VectorDrawableCompat" />
+
+            <ImageView
+                android:id="@+id/menueBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/webcam"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/webcam"
+                app:srcCompat="@drawable/dot_menue_bar"
+                tools:ignore="VectorDrawableCompat" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chattingRecycclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/sendMesagelinearLayOut"
+        android:layout_below="@+id/chattingtollBar"
+        android:layout_marginTop="0dp">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/sendMesagelinearLayOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="4dp"
+        android:foregroundGravity="center"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <EditText
+            android:id="@+id/type_msg"
+            android:layout_width="400dp"
+            android:layout_height="match_parent"
+            android:minHeight="80dp"
+            android:maxHeight="150dp"
+            android:layout_weight="1"
+            android:background="@drawable/type_message_box"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="type message"
+            android:inputType="textMultiLine"
+            android:padding="10dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/send_msg_btn"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:background="@drawable/msg_send_btn"
+            android:foregroundGravity="center_vertical"
+            android:src="@drawable/ic_baseline_send_24"
+            app:civ_border_color="@color/wpActionBar"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+</RelativeLayout>
